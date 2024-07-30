@@ -45,3 +45,20 @@
 // }
 
 // getPlayers()
+
+setTimeout(document.addEventListener('DOMContentLoaded', () => {
+    const dateDropBox = document.getElementById('wg-football-dropbtn')
+
+    if (dateDropBox){
+        const dateCal = document.createElement('input')
+        dateCal.type = 'date'
+        dateCal.id = 'wg-date-select'
+        dateCal.style.backgroundColor = '#01d099'
+        dateCal.style.color = '#222'
+        dateCal.style.padding = '5px 15px'
+        dateCal.style.cursor = 'pointer'
+        console.log('replacing dropdown w/ ', dateCal)
+        dateDropBox.parentElement.replaceChild(dateCal, dateDropBox)
+        console.log('replacement done')
+    }
+}), 5000)
