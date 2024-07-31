@@ -94,9 +94,13 @@
 //     document.body.appendChild(script);
 // });
 
-// let url = 'https://api.collectapi.com/sport/league?data.league=24'
+let league = 'İngiltere Premier Lig Özetler'
 
-let url = 'https://api.collectapi.com/sport/leaguesList'
+let key = '/mac-ozetleri-goller/ingiltere-premier-ligi'
+
+let url = `https://api.collectapi.com/sport/league?data.league=ingiltere-premier-ligi`
+
+// let url = 'https://api.collectapi.com/sport/leaguesList'
 
 fetch(url, {
     method : 'GET',
