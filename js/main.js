@@ -99,6 +99,7 @@ let league = 'İngiltere Premier Lig Özetler'
 let key = '/mac-ozetleri-goller/ingiltere-premier-ligi'
 
 let url = `https://api.collectapi.com/sport/league?data.league=ingiltere-premier-ligi`
+let url2 = `https://api.collectapi.com/sport/results?data.league=ingiltere-premier-ligi`
 
 // let url = 'https://api.collectapi.com/sport/leaguesList'
 
