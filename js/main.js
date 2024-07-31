@@ -66,30 +66,49 @@
 //     }
 // })
 
-document.addEventListener('DOMContentLoaded', function () {
-    const widgetDiv = document.createElement('div');
-    widgetDiv.id = 'wg-api-football-games';
-    widgetDiv.dataset.host = 'v3.football.api-sports.io';
-    widgetDiv.dataset.key = '1ff0a26a1454cbb7f71bbe8045b916d4';
-    widgetDiv.dataset.date = '2024-08-17';
-    widgetDiv.dataset.league = '39';
-    widgetDiv.dataset.season = '2024';
-    widgetDiv.dataset.theme = 'dark';
-    widgetDiv.dataset.refresh = '0';
-    widgetDiv.dataset.showToolbar = 'true';
-    widgetDiv.dataset.showErrors = 'false';
-    widgetDiv.dataset.showLogos = 'true';
-    widgetDiv.dataset.modalGame = 'true';
-    widgetDiv.dataset.modalStandings = 'true';
-    widgetDiv.dataset.modalShowLogos = 'true';
-    widgetDiv.style.height = '400px'
-    widgetDiv.style.width = '100%'
-    widgetDiv.style.margin = '0 auto'
+// document.addEventListener('DOMContentLoaded', function () {
+//     const widgetDiv = document.createElement('div');
+//     widgetDiv.id = 'wg-api-football-games';
+//     widgetDiv.dataset.host = 'v3.football.api-sports.io';
+//     widgetDiv.dataset.key = '1ff0a26a1454cbb7f71bbe8045b916d4';
+//     widgetDiv.dataset.date = '2024-08-17';
+//     widgetDiv.dataset.league = '39';
+//     widgetDiv.dataset.season = '2024';
+//     widgetDiv.dataset.theme = 'dark';
+//     widgetDiv.dataset.refresh = '0';
+//     widgetDiv.dataset.showToolbar = 'true';
+//     widgetDiv.dataset.showErrors = 'false';
+//     widgetDiv.dataset.showLogos = 'true';
+//     widgetDiv.dataset.modalGame = 'true';
+//     widgetDiv.dataset.modalStandings = 'true';
+//     widgetDiv.dataset.modalShowLogos = 'true';
+//     widgetDiv.style.height = '400px'
+//     widgetDiv.style.width = '100%'
+//     widgetDiv.style.margin = '0 auto'
 
-    document.body.appendChild(widgetDiv);
+//     document.body.appendChild(widgetDiv);
 
-    const script = document.createElement('script');
-    script.type = 'module';
-    script.src = 'https://widgets.api-sports.io/2.0.3/widgets.js';
-    document.body.appendChild(script);
-});
+//     const script = document.createElement('script');
+//     script.type = 'module';
+//     script.src = 'https://widgets.api-sports.io/2.0.3/widgets.js';
+//     document.body.appendChild(script);
+// });
+
+// let url = 'https://api.collectapi.com/sport/league?data.league=24'
+
+let url = 'https://api.collectapi.com/sport/leaguesList'
+
+fetch(url, {
+    method : 'GET',
+    headers : {
+        "content-type": "application/json",
+		"authorization": "apikey 4w2SNXofae9kR2qbQ4nztb:5ELeaTekWJ1om9OC2morSD"
+    }
+})
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => {
+        console.log(`the error: ${err} has occurred`)
+    })
