@@ -68,6 +68,8 @@ html{
     width: 100%;
     margin: 0 auto;
     padding: 0;
+    align-content: center;
+    text-align: center;
 }
 
 .home > .homeScore,
@@ -76,10 +78,13 @@ html{
     width: 100%;
     margin: 0 auto;
     padding: 0;
+    align-content: center;
+    text-align: center;
 }
 
 .game > .date{
     width: 100%;
     height: 20%;
+    align-content: center;
     text-align: center;
 }
