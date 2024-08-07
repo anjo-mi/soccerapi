@@ -56,7 +56,7 @@ html{
 .leagueTable .goalsFor,
 .leagueTable .goalsAgainst,
 .leagueTable .gamesPlayed{
-    width: 5%;
+    width: 9%;
 }
 
 .resultsTable > section{
