@@ -35,12 +35,24 @@ function getTable(){
             let teams = document.querySelectorAll('.teamInfo')
             teams.forEach((el,i) => {
                 el.querySelector('.rank').textContent = data.result[i].rank
+                if (data.result[i].rank < 5){
+                    el.querySelector('.rank').style.color = 'green'
+                }else if(data.result[i].rank < 7){
+                    el.querySelector('.rank').style.color = 'orange'
+                }else if(data.result[i].rank > 17){
+                    el.querySelector('.rank').style.color = 'red'
+                }
                 el.querySelector('.team').textContent = data.result[i].team
                 el.querySelector('.point').textContent = data.result[i].point
                 el.querySelector('.win').textContent = data.result[i].win
                 el.querySelector('.draw').textContent = data.result[i].draw
                 el.querySelector('.lose').textContent = data.result[i].lose
                 el.querySelector('.goalDiff').textContent = data.result[i].goaldistance
+                if (data.result[i].goaldistance >= 0){
+                    el.querySelector('.goalDiff').style.color = 'green'
+                }else{
+                    el.querySelector('.goalDiff').style.color = 'red'
+                }
                 el.querySelector('.goalsFor').textContent = data.result[i].goalfor
                 el.querySelector('.goalsAgainst').textContent = data.result[i].goalagainst
                 el.querySelector('.gamesPlayed').textContent = data.result[i].play
