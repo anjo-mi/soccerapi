@@ -34,7 +34,17 @@ function getResults(){
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data.result)
+            let games = document.querySelectorAll('.game')
+            games.forEach((el,i) => {
+                if (i < data.result.length){
+                    el.querySelector('.homeTeam').textContent = data.result[i].home
+                    el.querySelector('.homeScore').textContent = data.result[i].skor.split('')[0]
+                    el.querySelector('.homeTeam').textContent = data.result[i].away
+                    el.querySelector('.awayScore').textContent = data.result[i].skor.split('')[2]
+                    el.querySelector('.date').textContent = data.result[i].date.slice(0,10)
+                }
+            })
         })
         .catch(err => {
             console.log(`the error: ${err} has occurred`)
