@@ -7,6 +7,10 @@ let url = `https://api.collectapi.com/sport/league?data.league=ingiltere-premier
 let url2 = `https://api.collectapi.com/sport/results?data.league=ingiltere-premier-ligi`
 
 
+document.querySelector('#showTable').addEventListener('click', getTable)
+document.querySelector('#showResults').addEventListener('click', getResults)
+
+
 function getTable(){
     fetch(url, {
         method : 'GET',
@@ -18,8 +22,8 @@ function getTable(){
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            document.querySelector('.resultsTable').classList.add('.hidden')
-            document.querySelector('.leagueTable').classList.remove('.hidden')
+            document.querySelector('.resultsTable').classList.toggle('hidden')
+            document.querySelector('.leagueTable').classList.toggle('hidden')
         })
         .catch(err => {
             console.log(`the error: ${err} has occurred`)
@@ -37,8 +41,8 @@ function getResults(){
         .then(res => res.json())
         .then(data => {
             console.log(data.result)
-            document.querySelector('.leagueTable').classList.add('.hidden')
-            document.querySelector('.resultsTable').classList.remove('.hidden')
+            document.querySelector('.leagueTable').classList.toggle('hidden')
+            document.querySelector('.resultsTable').classList.toggle('hidden')
             let games = document.querySelectorAll('.game')
             games.forEach((el,i) => {
                 if (i < data.result.length){
@@ -54,6 +58,3 @@ function getResults(){
             console.log(`the error: ${err} has occurred`)
         })
 }
-
-getTable()
-getResults()
