@@ -18,6 +18,8 @@ function getTable(){
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            document.querySelector('.resultsTable').classList.add('.hidden')
+            document.querySelector('.leagueTable').classList.remove('.hidden')
         })
         .catch(err => {
             console.log(`the error: ${err} has occurred`)
@@ -35,6 +37,8 @@ function getResults(){
         .then(res => res.json())
         .then(data => {
             console.log(data.result)
+            document.querySelector('.leagueTable').classList.add('.hidden')
+            document.querySelector('.resultsTable').classList.remove('.hidden')
             let games = document.querySelectorAll('.game')
             games.forEach((el,i) => {
                 if (i < data.result.length){
