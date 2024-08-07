@@ -14,7 +14,7 @@ html{
 }
 
 .leagueTable > section{
-    height: 25px;
+    height: 40px;
     width: 95%;
     display: flex;
     justify-content: space-evenly;
@@ -23,9 +23,14 @@ html{
 
 }
 
+.teamInfo{
+    font-size: 1.8rem;
+    font-size-adjust: calc();
+}
+
 .header > section,
 .teamInfo > section{
-    height: 25px;
+    height: 40px;
     width: 19%;
     margin: 0 auto;
     padding: 0;
