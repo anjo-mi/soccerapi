@@ -40,7 +40,7 @@ function getResults(){
                 if (i < data.result.length){
                     el.querySelector('.homeTeam').textContent = data.result[i].home
                     el.querySelector('.homeScore').textContent = data.result[i].skor.split('')[0]
-                    el.querySelector('.homeTeam').textContent = data.result[i].away
+                    el.querySelector('.awayTeam').textContent = data.result[i].away
                     el.querySelector('.awayScore').textContent = data.result[i].skor.split('')[2]
                     el.querySelector('.date').textContent = data.result[i].date.slice(0,10)
                 }
