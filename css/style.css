@@ -26,11 +26,32 @@ html{
 .header > section,
 .teamInfo > section{
     height: 25px;
-    width: 9%;
+    width: 19%;
     margin: 0 auto;
     padding: 0;
     align-content: center;
     text-align: center;
+}
+
+.leagueTable .dispRank,
+.leagueTable .dispPoints,
+.leagueTable .dispWin,
+.leagueTable .dispDraw,
+.leagueTable .dispLose,
+.leagueTable .dispGoalDiff,
+.leagueTable .dispGoalFor,
+.leagueTable .dispGoalsAgainst,
+.leagueTable .dispGamesPlayed,
+.leagueTable .rank,
+.leagueTable .point,
+.leagueTable .win,
+.leagueTable .draw,
+.leagueTable .lose,
+.leagueTable .goalDiff,
+.leagueTable .goalsFor,
+.leagueTable .goalsAgainst,
+.leagueTable .gamesPlayed{
+    width: 5%;
 }
 
 .resultsTable > section{

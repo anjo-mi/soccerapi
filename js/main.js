@@ -6,6 +6,10 @@ let apiKey = API_KEY
 let url = `https://api.collectapi.com/sport/league?data.league=ingiltere-premier-ligi`
 let url2 = `https://api.collectapi.com/sport/results?data.league=ingiltere-premier-ligi`
 
+let league = document.querySelector('.leagueTable')
+let results = document.querySelector('.resultsTable')
+
+
 
 document.querySelector('#showTable').addEventListener('click', getTable)
 document.querySelector('#showResults').addEventListener('click', getResults)
@@ -22,8 +26,25 @@ function getTable(){
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            document.querySelector('.resultsTable').classList.toggle('hidden')
-            document.querySelector('.leagueTable').classList.toggle('hidden')
+            if (!results.classList.contains('hidden')){
+                results.classList.toggle('hidden')
+            }
+            if (league.classList.contains('hidden')){
+                league.classList.toggle('hidden')
+            }
+            let teams = document.querySelectorAll('.teamInfo')
+            teams.forEach((el,i) => {
+                el.querySelector('.rank').textContent = data.result[i].rank
+                el.querySelector('.team').textContent = data.result[i].team
+                el.querySelector('.point').textContent = data.result[i].point
+                el.querySelector('.win').textContent = data.result[i].win
+                el.querySelector('.draw').textContent = data.result[i].draw
+                el.querySelector('.lose').textContent = data.result[i].lose
+                el.querySelector('.goalDiff').textContent = data.result[i].goaldistance
+                el.querySelector('.goalsFor').textContent = data.result[i].goalfor
+                el.querySelector('.goalsAgainst').textContent = data.result[i].goalagainst
+                el.querySelector('.gamesPlayed').textContent = data.result[i].play
+            })
         })
         .catch(err => {
             console.log(`the error: ${err} has occurred`)
@@ -41,8 +62,12 @@ function getResults(){
         .then(res => res.json())
         .then(data => {
             console.log(data.result)
-            document.querySelector('.leagueTable').classList.toggle('hidden')
-            document.querySelector('.resultsTable').classList.toggle('hidden')
+            if (!league.classList.contains('hidden')){
+                league.classList.toggle('hidden')
+            }
+            if (results.classList.contains('hidden')){
+                results.classList.toggle('hidden')
+            }
             let games = document.querySelectorAll('.game')
             games.forEach((el,i) => {
                 if (i < data.result.length){
