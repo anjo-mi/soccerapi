@@ -64,6 +64,21 @@ html{
     padding: 0;
 }
 
+.homeTeam,
+.awayTeam{
+    font-size: 1.8rem;
+}
+
+.homeScore,
+.awayScore{
+    font-size: 4rem;
+}
+
+.date{
+    font-size: 2rem;
+    border-bottom: 2px double red;
+}
+
 .resultsTable > section > section{
     height: 80%;
     width: 100%;
