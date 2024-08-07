@@ -76,7 +76,7 @@ html{
 
 .date{
     font-size: 2rem;
-    border-bottom: 2px double red;
+    border-bottom: 4px solid black;
 }
 
 .resultsTable > section > section{

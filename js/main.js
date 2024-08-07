@@ -76,6 +76,13 @@ function getResults(){
                     el.querySelector('.awayTeam').textContent = data.result[i].away
                     el.querySelector('.awayScore').textContent = data.result[i].skor.split('')[2]
                     el.querySelector('.date').textContent = data.result[i].date.slice(0,10)
+                    if (data.result[i].skor.split('')[0] > data.result[i].skor.split('')[2]){
+                        el.querySelector('.homeScore').style.color = 'blue'
+                        el.querySelector('.awayScore').style.color = 'red'
+                    }else if(data.result[i].skor.split('')[0] < data.result[i].skor.split('')[2]){
+                        el.querySelector('.awayScore').style.color = 'blue'
+                        el.querySelector('.homeScore').style.color = 'red'
+                    }
                 }
             })
         })
